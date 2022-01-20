@@ -10,14 +10,15 @@ const props = defineProps({
 const state = reactive({
     formattedTime: computed(() => {
         return formatTime(props.data)
-    }),
-    timeElapsed: 0
+    })
 })
 
 const formatTime = (time) => {
-    if (!time) return
     const cDate = new Date()
-    return moment(cDate).startOf('day').seconds(time).format('HH:mm:ss')
+    if (!time) return moment(cDate).startOf('day').millisecond(0).format('mm:ss:SS')
+    return moment(cDate).startOf('day').millisecond(time).format('mm:ss:SS')
+
+
 }
 </script>
 <style>
