@@ -17,8 +17,6 @@ const formatTime = (time) => {
     const cDate = new Date()
     if (!time) return moment(cDate).startOf('day').millisecond(0).format('mm:ss:SS')
     return moment(cDate).startOf('day').millisecond(time).format('mm:ss:SS')
-
-
 }
 </script>
 <style>
